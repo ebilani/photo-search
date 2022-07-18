@@ -1,0 +1,61 @@
+<mat-toolbar class="main-header mat-elevation-z4" [class.hidden]="toggleSearch">
+  <mat-toolbar-row style="padding: 0 5px">
+    <div style="padding: 8px 0 0 10px; flex: 1">
+      <div class="mat-title color-custom" style="margin-bottom: 2px">
+        Search Images
+      </div>
+    </div>
+    <button mat-icon-button (click)="openSearch()">
+      <mat-icon class="color-custom">search</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-toolbar
+  class="search-block mat-elevation-z4"
+  [class.active]="toggleSearch">
+  <mat-toolbar-row style="padding: 0 5px">
+    <button class="search-icon" mat-icon-button disabled>
+      <mat-icon class="color-custom">search</mat-icon>
+    </button>
+    <input
+      (ngModelChange)="onSearch($event)"
+      class="search-control"
+      type="text"
+      placeholder="Search"
+      [(ngModel)]="searchText"
+      #searchbar/>
+    <button mat-button mat-icon-button (click)="searchClose()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<div *ngIf="isLoadingResults" class="tbl-spinner">
+  <mat-progress-spinner
+    class="spinner"
+    color="primary"
+    [diameter]="50"
+    mode="indeterminate">
+  </mat-progress-spinner>
+</div>
+<div class="test mt-5">
+  <custom-card
+    [photoList]="photoListArr"
+    (imgClick)="imageClick($event)">
+  </custom-card>
+  <div class="test">
+    <ng-image-fullscreen-view
+      [images]="imageObject"
+      [imageIndex]="selectedImageIndex"
+      [show]="showFlag"
+      (close)="closeEventHandler()">
+    </ng-image-fullscreen-view>
+
+    <div *ngIf="showFlag && showDetails" class="text-block">
+      <photo-details
+        (onCloseBtn)="closeDetails()"
+        [imageId]="selectedImageId"></photo-details>
+    </div>
+  </div>
+</div>

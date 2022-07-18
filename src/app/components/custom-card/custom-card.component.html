@@ -1,0 +1,14 @@
+<div class="elements">
+  <div class="photos-element " *ngFor="let item of photoList; let i = index" >
+    <mat-card>
+      <mat-tab-group mat-align-tabs="start">
+        <mat-tab  [label]="item.title" >
+            <div class="body-card">
+              <img  [src]="item.url_l" (click)="clickOnImage(i, item.id)" />
+            </div>
+        </mat-tab>
+      </mat-tab-group>
+    </mat-card>
+  </div>
+</div>
+

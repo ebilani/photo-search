@@ -1,0 +1,60 @@
+@import "../../styles.scss";
+
+header{
+    position: fixed;
+    top: 0;
+    z-index: 11;
+    transition: all 250ms ease-in-out;
+  }
+  .main-header{
+    @extend header;
+    background: $color__accent;
+    &.hidden{
+      opacity: 0;
+    }
+  }
+  .search-block{
+    width: 0%;
+    right: 0;
+    @extend header;
+    background: $color__body;
+    &.active{
+      width: 100%;
+    }
+    .search-control{
+      flex: 1;
+      @include font-size(1);
+      border: 0;
+      outline: none;
+      padding-left: #{$spacing-s}px;
+    }
+  }
+  .color-custom{
+     color: $color__gray_super_lighter;
+  }
+  .spinner{
+    margin: 5% auto;
+}
+.test{
+    img{
+        width: 500px;
+    }
+ 
+}
+::ng-deep{
+    .custom-image-main::before {
+        content: "Read this -";
+      }
+}
+.container {
+    position: relative;
+  }
+  .text-block {
+    position: absolute;
+    bottom: 100px;
+    right: 100px;
+    color: white;
+    padding-left: #{$spacing-l}px;
+    padding-right: #{$spacing-l}px;
+    z-index: 1031;
+  }

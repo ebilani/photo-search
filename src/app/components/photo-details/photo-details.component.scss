@@ -1,0 +1,19 @@
+@import "../../../styles.scss";
+
+#close {
+  float: right;
+  @include font-size(2);
+  cursor: pointer;
+  &:hover {
+    float: right;
+    color: $color__accent;
+  }
+}
+
+.flex-list {
+  @include flex-container(column, center, flex-start);
+  font-family: $secondary_font;
+  .heading-content{
+      @include font-size(1)
+  }
+}

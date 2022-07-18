@@ -1,0 +1,25 @@
+<mat-card *ngIf="!isLoadingResults">
+    <div>
+        <span id='close' (click)="closeDetails()">x</span>
+        <div class="flex-list pl-3">
+            <p class="heading-content"><b>Date Taken</b></p>
+            <p>{{imageDetails.dates?.taken | date: 'yyyy-MM-dd'}}</p>
+            <p class="heading-content"><b>Description</b></p>
+            <p [innerHtml]="imageDetails.description?._content"></p>
+            <p class="heading-content"><b>Owner</b></p>
+            <p>{{imageDetails.owner?.username}}</p>
+            <p class="heading-content"><b>Location</b></p>
+            <p>{{imageDetails.location?.country._content}}</p>
+         </div>
+    </div>
+
+</mat-card>
+
+<div *ngIf="isLoadingResults" class="tbl-spinner">
+    <mat-progress-spinner
+      class="spinner"
+      color="primary"
+      [diameter]="50"
+      mode="indeterminate">
+    </mat-progress-spinner>
+  </div>

@@ -1,0 +1,47 @@
+@import "../../../styles.scss";
+.elements {
+  @include create-grid(3);
+  .photos-element {
+    box-sizing: border-box;
+    flex: 0 0 25%;
+    margin: #{$spacing-xxl}px;
+    ::ng-deep {
+      .mat-tab-label {
+        font-family: $primary_font;
+        font-weight: $bold;
+        pointer-events: none;
+      }
+      mat-tab-body{
+          overflow: hidden;
+      }
+      .mat-tab-body-content {
+        .body-card {
+          width: 400px;
+          height: 400px;
+          overflow: hidden;
+          img {
+            position: absolute;
+            width: 100%;
+            height: auto;
+            transform: translate(0, -50%);
+            top: 50%;
+            cursor: pointer;
+            &:hover {
+              filter: brightness(0.3);
+            }
+          }
+        }
+      }
+    }
+    @include breakpoint(lg){
+      @include create-grid(2);  
+    }
+    @include breakpoint(ss){
+        @include create-grid(1);  
+      }
+  }
+}
+mat-card{
+    width: 500px;
+    height: 500px;
+}
