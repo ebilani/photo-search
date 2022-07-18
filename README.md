@@ -1,11 +1,11 @@
 # FormedixPhotos
 
-This project was generated with:
+This project was developed with:
   Angular CLI:  `12.0.5`
   Node: `14.16.0`
-  Angular Material & Bootstrap
-  BEM
-  Mixins
+  `Angular Material & Bootstrap`
+  `BEM`
+  `Mixins`
 
 # Install dependencies
 
