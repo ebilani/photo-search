@@ -14,6 +14,7 @@ import { NgImageFullscreenViewModule } from 'ng-image-fullscreen-view';
 import { HomeComponent } from './home/home.component';
 import { CustomCardComponent } from './components/custom-card/custom-card.component';
 import { PhotoDetailsComponent } from './components/photo-details/photo-details.component';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, CustomCardComponent, PhotoDetailsComponent],
@@ -28,7 +29,8 @@ import { PhotoDetailsComponent } from './components/photo-details/photo-details.
     MatIconModule,
     MatToolbarModule,
     NgImageFullscreenViewModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent],
